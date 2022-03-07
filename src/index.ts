@@ -4,5 +4,11 @@ import { User } from './models/User';
 // user.set({ name: 'AHMED', age: 21 });
 // user.save();
 
-const user = new User({ name: 'Diaa', age: 24 });
-user.save();
+const user = new User({ name: 'AHMED', age: 21 });
+// user.save();
+
+user.events.on('change', () => {
+  console.log('Change!');
+});
+
+user.events.trigger('change');
